@@ -3,13 +3,11 @@
 import { useEffect, useRef } from "react";
 import { useLocale } from "next-intl";
 
-// TODO: Konfiguriere diese Werte nach dem Einrichten von Giscus
-// Gehe zu https://giscus.app und folge den Anweisungen
 const GISCUS_CONFIG = {
-  repo: "OWNER/REPO" as `${string}/${string}`,
-  repoId: "YOUR_REPO_ID",
+  repo: "MagFischer/Malik." as `${string}/${string}`,
+  repoId: "R_kgDORBAd7A",
   category: "Announcements",
-  categoryId: "YOUR_CATEGORY_ID",
+  categoryId: "DIC_kwDORBAd7M4C1aVU",
 };
 
 export function Giscus() {
