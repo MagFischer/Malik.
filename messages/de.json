@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "title": "Personal Website",
+    "description": "Portfolio & Blog"
+  },
+  "hero": {
+    "title": "Willkommen",
+    "subtitle": "Portfolio & Blog",
+    "cta": {
+      "portfolio": "Portfolio",
+      "blog": "Blog"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "viewProject": "Projekt ansehen",
+    "noProjects": "Keine Projekte in dieser Kategorie.",
+    "backToPortfolio": "Zurück zum Portfolio",
+    "links": {
+      "github": "GitHub",
+      "demo": "Live Demo"
+    },
+    "categories": {
+      "all": "Alle",
+      "software": "Software",
+      "design": "Design"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Gedanken, Tutorials und Erfahrungen aus der Welt der Softwareentwicklung.",
+    "readMore": "Weiterlesen",
+    "minRead": "Min.",
+    "noPosts": "Noch keine Blog-Posts vorhanden.",
+    "backToBlog": "Zurück zum Blog",
+    "categories": {
+      "all": "Alle",
+      "tech": "Tech",
+      "personal": "Persönlich"
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "greeting": "Hey, ich bin Malik!",
+    "bio": {
+      "paragraph1": "Ich bin ein leidenschaftlicher Entwickler und Designer, der gerne kreative digitale Erlebnisse erschafft. Mit einem Fokus auf sauberen Code und durchdachtes Design bringe ich Ideen zum Leben.",
+      "paragraph2": "Wenn ich nicht gerade programmiere, experimentiere ich mit neuen Technologien, lese über Softwarearchitektur oder arbeite an persönlichen Projekten."
+    },
+    "skills": {
+      "title": "Skills & Technologien",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "design": "Design"
+    },
+    "values": {
+      "title": "Meine Werte",
+      "quality": {
+        "title": "Qualität",
+        "description": "Ich strebe nach exzellentem Code, der wartbar, testbar und performant ist."
+      },
+      "simplicity": {
+        "title": "Einfachheit",
+        "description": "Die beste Lösung ist oft die einfachste. Weniger Komplexität bedeutet weniger Fehler."
+      },
+      "learning": {
+        "title": "Kontinuierliches Lernen",
+        "description": "Technologie entwickelt sich ständig weiter. Ich bleibe neugierig und lerne jeden Tag dazu."
+      },
+      "collaboration": {
+        "title": "Zusammenarbeit",
+        "description": "Großartige Produkte entstehen durch Teamwork und offene Kommunikation."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Hast du eine Frage oder möchtest zusammenarbeiten? Schreib mir!",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Absenden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht gesendet! Ich melde mich bald.",
+    "error": "Fehler beim Senden. Bitte versuche es erneut.",
+    "alternative": "Oder schreib mir direkt eine E-Mail:"
+  },
+  "navigation": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "about": "Über mich",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten.",
+    "navigation": "Navigation",
+    "social": "Social",
+    "madeWith": "Mit Next.js & Tailwind gebaut"
+  },
+  "language": {
+    "switch": "Sprache wechseln",
+    "de": "Deutsch",
+    "en": "English"
+  }
+}

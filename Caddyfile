@@ -1,0 +1,58 @@
+# ===========================================
+# Caddyfile for Personal Website
+# ===========================================
+# Replace example.com with your actual domain
+# Caddy automatically handles HTTPS certificates
+
+{
+	# Global options
+	email your-email@example.com
+}
+
+# ===========================================
+# Production (with domain)
+# ===========================================
+# Uncomment and modify when you have a domain:
+#
+# example.com {
+# 	# Reverse proxy to Next.js
+# 	reverse_proxy web:3000
+#
+# 	# Security headers
+# 	header {
+# 		# Enable HSTS
+# 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+# 		# Prevent clickjacking
+# 		X-Frame-Options "SAMEORIGIN"
+# 		# Prevent MIME type sniffing
+# 		X-Content-Type-Options "nosniff"
+# 		# XSS Protection
+# 		X-XSS-Protection "1; mode=block"
+# 		# Referrer Policy
+# 		Referrer-Policy "strict-origin-when-cross-origin"
+# 	}
+#
+# 	# Gzip compression
+# 	encode gzip
+#
+# 	# Logging
+# 	log {
+# 		output file /var/log/caddy/access.log
+# 		format json
+# 	}
+# }
+
+# ===========================================
+# Development / Local Testing
+# ===========================================
+:80 {
+	reverse_proxy web:3000
+
+	# Security headers (less strict for development)
+	header {
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+	}
+
+	encode gzip
+}

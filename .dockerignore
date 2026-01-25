@@ -1,0 +1,48 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build output
+.next
+out
+build
+dist
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files (don't include secrets in image)
+.env
+.env.*
+!.env.example
+
+# Docker files (avoid recursion)
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Documentation
+README.md
+*.md
+!src/content/**/*.md
+
+# Testing
+coverage
+.nyc_output
+*.test.*
+*.spec.*
+
+# Misc
+*.log
+npm-debug.log*

@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "title": "Personal Website",
+    "description": "Portfolio & Blog"
+  },
+  "hero": {
+    "title": "Welcome",
+    "subtitle": "Portfolio & Blog",
+    "cta": {
+      "portfolio": "Portfolio",
+      "blog": "Blog"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "viewProject": "View Project",
+    "noProjects": "No projects in this category.",
+    "backToPortfolio": "Back to Portfolio",
+    "links": {
+      "github": "GitHub",
+      "demo": "Live Demo"
+    },
+    "categories": {
+      "all": "All",
+      "software": "Software",
+      "design": "Design"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts, tutorials, and experiences from the world of software development.",
+    "readMore": "Read more",
+    "minRead": "min",
+    "noPosts": "No blog posts yet.",
+    "backToBlog": "Back to Blog",
+    "categories": {
+      "all": "All",
+      "tech": "Tech",
+      "personal": "Personal"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "greeting": "Hey, I'm Malik!",
+    "bio": {
+      "paragraph1": "I'm a passionate developer and designer who loves creating creative digital experiences. With a focus on clean code and thoughtful design, I bring ideas to life.",
+      "paragraph2": "When I'm not coding, I experiment with new technologies, read about software architecture, or work on personal projects."
+    },
+    "skills": {
+      "title": "Skills & Technologies",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "design": "Design"
+    },
+    "values": {
+      "title": "My Values",
+      "quality": {
+        "title": "Quality",
+        "description": "I strive for excellent code that is maintainable, testable, and performant."
+      },
+      "simplicity": {
+        "title": "Simplicity",
+        "description": "The best solution is often the simplest. Less complexity means fewer bugs."
+      },
+      "learning": {
+        "title": "Continuous Learning",
+        "description": "Technology is constantly evolving. I stay curious and learn something new every day."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Great products are built through teamwork and open communication."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a question or want to work together? Drop me a message!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Failed to send. Please try again.",
+    "alternative": "Or email me directly:"
+  },
+  "navigation": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "navigation": "Navigation",
+    "social": "Social",
+    "madeWith": "Built with Next.js & Tailwind"
+  },
+  "language": {
+    "switch": "Switch language",
+    "de": "Deutsch",
+    "en": "English"
+  }
+}
