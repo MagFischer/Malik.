@@ -38,10 +38,10 @@ function ContactContent() {
             {t("alternative")}
           </p>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:magnan@magnanmalik.com"
             className="text-[var(--color-accent)] hover:underline"
           >
-            hello@example.com
+            magnan@magnanmalik.com
           </a>
         </div>
       </div>
