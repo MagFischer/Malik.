@@ -7,15 +7,19 @@
     "title": "Willkommen",
     "subtitle": "Portfolio & Blog",
     "cta": {
-      "portfolio": "Portfolio",
-      "blog": "Blog"
+      "portfolio": "Portfolio ansehen",
+      "blog": "Blog lesen"
     }
   },
   "portfolio": {
     "title": "Portfolio",
+    "subtitle": "Eine Auswahl meiner Projekte.",
     "viewProject": "Projekt ansehen",
     "noProjects": "Keine Projekte in dieser Kategorie.",
     "backToPortfolio": "Zurück zum Portfolio",
+    "overview": "Überblick",
+    "techStack": "Tech Stack",
+    "techStackDescription": "Technologien, die in diesem Projekt verwendet wurden.",
     "links": {
       "github": "GitHub",
       "demo": "Live Demo"
@@ -24,12 +28,16 @@
       "all": "Alle",
       "software": "Software",
       "design": "Design"
+    },
+    "cta": {
+      "title": "Interessiert?",
+      "description": "Schau dir die Live-Demo an oder erkunde den Code auf GitHub."
     }
   },
   "blog": {
     "title": "Blog",
     "subtitle": "Gedanken, Tutorials und Erfahrungen aus der Welt der Softwareentwicklung.",
-    "readMore": "Weiterlesen",
+    "readMore": "Alle Beiträge",
     "minRead": "Min.",
     "noPosts": "Noch keine Blog-Posts vorhanden.",
     "backToBlog": "Zurück zum Blog",
@@ -43,11 +51,13 @@
     "title": "Über mich",
     "greeting": "Hey, ich bin Malik!",
     "bio": {
+      "title": "Meine Geschichte",
       "paragraph1": "Ich bin ein leidenschaftlicher Entwickler und Designer, der gerne kreative digitale Erlebnisse erschafft. Mit einem Fokus auf sauberen Code und durchdachtes Design bringe ich Ideen zum Leben.",
       "paragraph2": "Wenn ich nicht gerade programmiere, experimentiere ich mit neuen Technologien, lese über Softwarearchitektur oder arbeite an persönlichen Projekten."
     },
     "skills": {
       "title": "Skills & Technologien",
+      "subtitle": "Werkzeuge und Technologien, mit denen ich täglich arbeite.",
       "frontend": "Frontend",
       "backend": "Backend",
       "design": "Design"
@@ -78,11 +88,12 @@
     "name": "Name",
     "email": "E-Mail",
     "message": "Nachricht",
-    "send": "Absenden",
+    "send": "Nachricht senden",
     "sending": "Wird gesendet...",
     "success": "Nachricht gesendet! Ich melde mich bald.",
     "error": "Fehler beim Senden. Bitte versuche es erneut.",
-    "alternative": "Oder schreib mir direkt eine E-Mail:"
+    "alternative": "Oder schreib mir direkt eine E-Mail:",
+    "or": "oder"
   },
   "navigation": {
     "home": "Home",
@@ -94,6 +105,8 @@
   "footer": {
     "copyright": "Alle Rechte vorbehalten.",
     "navigation": "Navigation",
+    "resources": "Ressourcen",
+    "allPosts": "Alle Blog-Beiträge",
     "social": "Social",
     "madeWith": "Mit Next.js & Tailwind gebaut"
   },

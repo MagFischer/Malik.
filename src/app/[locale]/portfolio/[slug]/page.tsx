@@ -3,6 +3,8 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getProjectBySlug, projects } from "@/lib/projects";
+import { ScrollReveal, StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
+import { Parallax } from "@/components/Parallax";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -28,111 +30,190 @@ function ProjectContent({ project }: { project: NonNullable<ReturnType<typeof ge
   const t = useTranslations("portfolio");
 
   return (
-    <main className="min-h-screen px-6 py-24">
-      <div className="max-w-4xl mx-auto">
-        {/* Back Link */}
-        <Link
-          href="/#portfolio"
-          className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] hover:text-[var(--color-accent)] mb-8 transition-colors"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          {t("backToPortfolio")}
-        </Link>
-
-        {/* Header */}
-        <div className="mb-8">
-          <span className="inline-block text-sm font-medium text-[var(--color-accent)] uppercase tracking-wider mb-3">
-            {t(`categories.${project.category}`)}
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
-          <p className="text-xl text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
-            {project.description}
-          </p>
-        </div>
-
-        {/* Links */}
-        {(project.github || project.demo) && (
-          <div className="flex gap-4 mb-12">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-border)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-accent)] transition-colors"
-              >
-                <GitHubIcon className="w-5 h-5" />
-                {t("links.github")}
-              </a>
-            )}
-            {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)] transition-colors"
-              >
-                <ExternalLinkIcon className="w-5 h-5" />
-                {t("links.demo")}
-              </a>
-            )}
-          </div>
-        )}
-
-        {/* Image */}
-        <div className="aspect-video bg-[var(--color-border)] dark:bg-[var(--color-border-dark)] rounded-2xl mb-12 overflow-hidden">
-          {project.image ? (
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <svg
-                className="w-20 h-20 text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
+    <main>
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+        <div className="max-w-[980px] mx-auto px-6">
+          {/* Back Link */}
+          <ScrollReveal>
+            <Link
+              href="/#portfolio"
+              className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] hover:text-[var(--color-accent)] mb-8 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
               </svg>
-            </div>
+              {t("backToPortfolio")}
+            </Link>
+          </ScrollReveal>
+
+          {/* Category */}
+          <ScrollReveal delay={0.1}>
+            <span className="inline-block text-sm font-medium text-[var(--color-accent)] uppercase tracking-wider mb-4">
+              {t(`categories.${project.category}`)}
+            </span>
+          </ScrollReveal>
+
+          {/* Title */}
+          <ScrollReveal delay={0.2}>
+            <h1 className="text-hero mb-6">{project.title}</h1>
+          </ScrollReveal>
+
+          {/* Description */}
+          <ScrollReveal delay={0.3}>
+            <p className="text-xl md:text-2xl text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] max-w-2xl">
+              {project.description}
+            </p>
+          </ScrollReveal>
+
+          {/* Links */}
+          {(project.github || project.demo) && (
+            <ScrollReveal delay={0.4}>
+              <div className="flex gap-4 mt-10">
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    <ExternalLinkIcon className="w-5 h-5 mr-2" />
+                    {t("links.demo")}
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                  >
+                    <GitHubIcon className="w-5 h-5 mr-2" />
+                    {t("links.github")}
+                  </a>
+                )}
+              </div>
+            </ScrollReveal>
           )}
         </div>
+      </section>
 
-        {/* Long Description */}
-        {project.longDescription && (
-          <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
-            {project.longDescription.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        )}
-
-        {/* Tech Stack */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4">Tech Stack</h2>
-          <div className="flex flex-wrap gap-2">
-            {project.tech.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1.5 text-sm rounded-lg bg-[var(--color-border)] dark:bg-[var(--color-border-dark)]"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+      {/* Hero Image */}
+      <section className="pb-24 md:pb-32">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <Parallax speed={0.2}>
+            <ScrollReveal>
+              <div className="aspect-video bg-[var(--color-background-secondary)] dark:bg-[var(--color-background-secondary-dark)] rounded-3xl overflow-hidden">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <svg
+                      className="w-24 h-24 text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1}
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            </ScrollReveal>
+          </Parallax>
         </div>
-      </div>
+      </section>
+
+      {/* Long Description */}
+      {project.longDescription && (
+        <section className="py-24 md:py-32 bg-[var(--color-background-secondary)] dark:bg-[var(--color-background-secondary-dark)]">
+          <div className="max-w-[680px] mx-auto px-6">
+            <ScrollReveal>
+              <h2 className="text-section mb-8">{t("overview")}</h2>
+            </ScrollReveal>
+            {project.longDescription.split("\n\n").map((paragraph, i) => (
+              <ScrollReveal key={i} delay={0.1 * (i + 1)}>
+                <p className="text-lg text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] leading-relaxed mb-6 last:mb-0">
+                  {paragraph}
+                </p>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Tech Stack */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-[980px] mx-auto px-6">
+          <ScrollReveal>
+            <h2 className="text-section text-center mb-4">{t("techStack")}</h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-lg text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] text-center max-w-xl mx-auto mb-12">
+              {t("techStackDescription")}
+            </p>
+          </ScrollReveal>
+
+          <StaggerReveal className="flex flex-wrap justify-center gap-3">
+            {project.tech.map((tech) => (
+              <StaggerItem key={tech}>
+                <span className="px-5 py-2.5 text-base rounded-full bg-[var(--color-background-secondary)] dark:bg-[var(--color-background-secondary-dark)]">
+                  {tech}
+                </span>
+              </StaggerItem>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      {/* CTA */}
+      {(project.github || project.demo) && (
+        <section className="py-24 md:py-32 bg-[var(--color-background-secondary)] dark:bg-[var(--color-background-secondary-dark)]">
+          <div className="max-w-[580px] mx-auto px-6 text-center">
+            <ScrollReveal>
+              <h2 className="text-section mb-6">{t("cta.title")}</h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <p className="text-lg text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] mb-10">
+                {t("cta.description")}
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="flex gap-4 justify-center flex-wrap">
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    {t("links.demo")}
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                  >
+                    {t("links.github")}
+                  </a>
+                )}
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

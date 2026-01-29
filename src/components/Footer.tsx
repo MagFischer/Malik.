@@ -17,34 +17,44 @@ const navLinks = [
   { href: "/contact", label: "contact" },
 ] as const;
 
+const resourceLinks = [
+  { href: "/blog", label: "allPosts" },
+] as const;
+
 export function Footer() {
   const t = useTranslations();
   const locale = useLocale();
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[var(--color-border)] dark:border-[var(--color-border-dark)]">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="text-xl font-bold tracking-tight">
+    <footer className="bg-[var(--color-background-secondary)] dark:bg-[var(--color-background-secondary-dark)]">
+      {/* Main Footer */}
+      <div className="max-w-[980px] mx-auto px-6 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          {/* Brand Column */}
+          <div className="col-span-2 md:col-span-1">
+            <Link
+              href="/"
+              className="inline-block text-xl font-semibold tracking-tight mb-4"
+            >
               malik.
             </Link>
-            <p className="mt-3 text-sm text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
+            <p className="text-sm text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] leading-relaxed">
               {t("metadata.description")}
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation Column */}
           <div>
-            <h3 className="font-semibold mb-4">{t("footer.navigation")}</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] mb-4">
+              {t("footer.navigation")}
+            </h3>
+            <ul className="space-y-3">
               {navLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] hover:text-[var(--color-accent)] transition-colors"
+                    className="text-sm text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)] hover:text-[var(--color-accent)] transition-colors"
                   >
                     {t(`navigation.${item.label}`)}
                   </Link>
@@ -53,39 +63,63 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Resources Column */}
           <div>
-            <h3 className="font-semibold mb-4">{t("footer.social")}</h3>
-            <div className="flex gap-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] mb-4">
+              {t("footer.resources")}
+            </h3>
+            <ul className="space-y-3">
+              {resourceLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)] hover:text-[var(--color-accent)] transition-colors"
+                  >
+                    {t(`footer.${item.label}`)}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={`/${locale}/feed.xml`}
+                  className="text-sm text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)] hover:text-[var(--color-accent)] transition-colors"
+                >
+                  RSS Feed
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Column */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] mb-4">
+              {t("footer.social")}
+            </h3>
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-[var(--color-border)] dark:bg-[var(--color-border-dark)] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-full text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] hover:text-[var(--color-accent)] hover:bg-[var(--color-border)]/50 dark:hover:bg-[var(--color-border-dark)]/50 transition-colors"
                   aria-label={social.name}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
-              <a
-                href={`/${locale}/feed.xml`}
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-[var(--color-border)] dark:bg-[var(--color-border-dark)] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
-                aria-label="RSS Feed"
-              >
-                <RSSIcon className="w-5 h-5" />
-              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom */}
-        <div className="pt-8 border-t border-[var(--color-border)] dark:border-[var(--color-border-dark)] flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
-            © {currentYear} malik. {t("footer.copyright")}
+      {/* Bottom Bar */}
+      <div className="border-t border-[var(--color-border)] dark:border-[var(--color-border-dark)]">
+        <div className="max-w-[980px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+          <p className="text-xs text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
+            Copyright © {currentYear} malik. {t("footer.copyright")}
           </p>
-          <p className="text-sm text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
+          <p className="text-xs text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
             {t("footer.madeWith")}
           </p>
         </div>
@@ -118,14 +152,6 @@ function TwitterIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
-
-function RSSIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-      <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18ZM4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44Zm0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z" />
     </svg>
   );
 }

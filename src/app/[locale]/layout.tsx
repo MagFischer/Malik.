@@ -72,7 +72,7 @@ export default async function LocaleLayout({
       <body className="antialiased min-h-screen">
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <div className="pt-16 min-h-screen">{children}</div>
+          <div className="pt-11 min-h-screen">{children}</div>
           <Footer />
         </NextIntlClientProvider>
       </body>

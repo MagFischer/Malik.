@@ -12,7 +12,7 @@ export function ContactForm() {
     name: "",
     email: "",
     message: "",
-    honeypot: "", // Spam protection
+    honeypot: "",
   });
 
   const handleChange = (
@@ -27,9 +27,8 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot check - if filled, it's likely a bot
     if (formData.honeypot) {
-      setFormState("success"); // Fake success for bots
+      setFormState("success");
       return;
     }
 
@@ -58,8 +57,8 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Honeypot - hidden from users, visible to bots */}
+    <form onSubmit={handleSubmit} className="space-y-8">
+      {/* Honeypot */}
       <input
         type="text"
         name="honeypot"
@@ -71,10 +70,7 @@ export function ContactForm() {
       />
 
       {/* Name */}
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-2">
-          {t("name")}
-        </label>
+      <div className="relative">
         <input
           type="text"
           id="name"
@@ -82,15 +78,19 @@ export function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] dark:border-[var(--color-border-dark)] bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-shadow"
+          placeholder=" "
+          className="input-underline peer"
         />
+        <label
+          htmlFor="name"
+          className="absolute left-0 top-3 text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] text-base transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[var(--color-accent)] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs"
+        >
+          {t("name")}
+        </label>
       </div>
 
       {/* Email */}
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
-          {t("email")}
-        </label>
+      <div className="relative">
         <input
           type="email"
           id="email"
@@ -98,43 +98,56 @@ export function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] dark:border-[var(--color-border-dark)] bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-shadow"
+          placeholder=" "
+          className="input-underline peer"
         />
+        <label
+          htmlFor="email"
+          className="absolute left-0 top-3 text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] text-base transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[var(--color-accent)] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs"
+        >
+          {t("email")}
+        </label>
       </div>
 
       {/* Message */}
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
-          {t("message")}
-        </label>
+      <div className="relative">
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
-          rows={5}
-          className="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] dark:border-[var(--color-border-dark)] bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-shadow resize-none"
+          rows={4}
+          placeholder=" "
+          className="input-underline peer resize-none"
         />
+        <label
+          htmlFor="message"
+          className="absolute left-0 top-3 text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] text-base transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[var(--color-accent)] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs"
+        >
+          {t("message")}
+        </label>
       </div>
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={formState === "submitting"}
-        className="w-full px-6 py-3 bg-[var(--color-accent)] text-white font-medium rounded-lg hover:bg-[var(--color-accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-      >
-        {formState === "submitting" ? t("sending") : t("send")}
-      </button>
+      {/* Submit Button - Pill Style */}
+      <div className="pt-4">
+        <button
+          type="submit"
+          disabled={formState === "submitting"}
+          className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+        >
+          {formState === "submitting" ? t("sending") : t("send")}
+        </button>
+      </div>
 
       {/* Status Messages */}
       {formState === "success" && (
-        <p className="text-green-600 dark:text-green-400 text-center">
+        <p className="text-[var(--color-accent)] text-center text-sm">
           {t("success")}
         </p>
       )}
       {formState === "error" && (
-        <p className="text-red-600 dark:text-red-400 text-center">
+        <p className="text-red-500 text-center text-sm">
           {t("error")}
         </p>
       )}
