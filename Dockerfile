@@ -4,7 +4,7 @@
 # Base image
 # ================================
 FROM node:20-alpine AS base
-RUN corepack enable pnpm
+RUN npm install -g pnpm
 
 # ================================
 # Dependencies
