@@ -1,13 +1,21 @@
-import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { BentoGrid } from "@/components/BentoGrid";
+import { BentoCard } from "@/components/BentoCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { BlogCard } from "@/components/BlogCard";
-import { getFeaturedProjects } from "@/lib/projects";
+import { AboutCard } from "@/components/AboutCard";
+import { StatsCard } from "@/components/StatsCard";
+import { SkillsCard } from "@/components/SkillsCard";
+import { SocialProofCard } from "@/components/SocialProofCard";
+import { ContactSection } from "@/components/ContactSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
+import { getAllProjects } from "@/lib/projects";
 import { getAllPosts } from "@/lib/blog";
-import { Link } from "@/i18n/navigation";
-import { HeroBlob } from "@/components/HeroBlob";
-import { ScrollReveal, StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
-import { Parallax } from "@/components/Parallax";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -17,145 +25,81 @@ export default async function Home({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const featuredProjects = getFeaturedProjects();
-  const recentPosts = getAllPosts(locale).slice(0, 3);
+  // Get portfolio and blog data
+  const projects = getAllProjects();
+  const posts = getAllPosts(locale);
 
-  return <HomeContent featuredProjects={featuredProjects} recentPosts={recentPosts} />;
-}
-
-function HomeContent({
-  featuredProjects,
-  recentPosts,
-}: {
-  featuredProjects: ReturnType<typeof getFeaturedProjects>;
-  recentPosts: ReturnType<typeof getAllPosts>;
-}) {
-  const t = useTranslations();
+  // Get featured items
+  const featuredProject = projects[0];
+  const otherProjects = projects.slice(1, 3);
+  const featuredPost = posts[0];
+  const otherPosts = posts.slice(1, 3);
 
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Blob */}
-        <div className="absolute inset-0 z-0">
-          <Parallax speed={0.3} className="w-full h-full">
-            <HeroBlob className="opacity-60" />
-          </Parallax>
-        </div>
+    <>
+      <NoiseOverlay />
+      <Header />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-[980px] mx-auto px-6 text-center">
-          <ScrollReveal>
-            <h1 className="text-hero mb-6">
-              {t("hero.title")}
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <p className="text-xl md:text-2xl text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] mb-10 max-w-2xl mx-auto">
-              {t("hero.subtitle")}
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <div className="flex gap-4 justify-center flex-wrap">
-              <a href="#portfolio" className="btn-primary">
-                {t("hero.cta.portfolio")}
-              </a>
-              <a href="#blog" className="btn-secondary">
-                {t("hero.cta.blog")}
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
+      <main>
+        {/* Hero Section */}
+        <Hero />
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
-      </section>
+        {/* Services Section */}
+        <ScrollReveal>
+          <ServicesSection />
+        </ScrollReveal>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-24 md:py-32">
-        <div className="max-w-[980px] mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="text-section text-center mb-4">
-              {t("portfolio.title")}
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <p className="text-lg text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] text-center max-w-xl mx-auto mb-16">
-              {t("portfolio.subtitle")}
-            </p>
-          </ScrollReveal>
-          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredProjects.map((project) => (
-              <StaggerItem key={project.slug}>
-                <ProjectCard project={project} />
-              </StaggerItem>
-            ))}
-          </StaggerReveal>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section
-        id="blog"
-        className="py-24 md:py-32 bg-[var(--color-background-secondary)] dark:bg-[var(--color-background-secondary-dark)]"
-      >
-        <div className="max-w-[980px] mx-auto px-6">
-          <ScrollReveal>
-            <div className="flex items-end justify-between mb-16">
-              <div>
-                <h2 className="text-section mb-2">{t("blog.title")}</h2>
-                <p className="text-lg text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]">
-                  {t("blog.subtitle")}
-                </p>
-              </div>
-              <Link
-                href="/blog"
-                className="hidden md:inline-flex text-[var(--color-accent)] hover:underline text-sm font-medium"
-              >
-                {t("blog.readMore")} →
-              </Link>
-            </div>
+        {/* Bento Grid Section */}
+        <BentoGrid>
+          {/* Row 1: Featured Project + About + Stats */}
+          <ScrollReveal className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 lg:row-span-2">
+            {featuredProject && (
+              <ProjectCard project={featuredProject} featured />
+            )}
           </ScrollReveal>
 
-          {recentPosts.length > 0 ? (
-            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {recentPosts.map((post) => (
-                <StaggerItem key={post.slug}>
-                  <BlogCard post={post} />
-                </StaggerItem>
-              ))}
-            </StaggerReveal>
-          ) : (
-            <ScrollReveal>
-              <p className="text-center text-[var(--color-muted)] dark:text-[var(--color-muted-dark)] py-12">
-                {t("blog.noPosts")}
-              </p>
+          <ScrollReveal delay={0.1} className="col-span-1 lg:col-span-1 row-span-1 lg:row-span-2" id="about">
+            <AboutCard className="h-full" />
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2} className="col-span-1 lg:col-span-1">
+            <StatsCard className="h-full" />
+          </ScrollReveal>
+
+          {/* Row 2: Skills + Other Projects */}
+          <ScrollReveal delay={0.1} className="col-span-1 lg:col-span-1">
+            <SkillsCard className="h-full" />
+          </ScrollReveal>
+
+          {otherProjects.map((project, index) => (
+            <ScrollReveal key={project.slug} delay={0.2 + index * 0.1} className="col-span-1" id={index === 0 ? "projects" : undefined}>
+              <ProjectCard project={project} />
             </ScrollReveal>
-          )}
+          ))}
 
-          <ScrollReveal>
-            <div className="mt-12 text-center md:hidden">
-              <Link href="/blog" className="btn-secondary">
-                {t("blog.readMore")}
-              </Link>
-            </div>
+          {/* Row 3: Featured Blog + Other Blog Posts + Social Proof */}
+          <ScrollReveal delay={0.1} className="col-span-1 md:col-span-2" id="blog">
+            {featuredPost && <BlogCard post={featuredPost} featured />}
           </ScrollReveal>
-        </div>
-      </section>
-    </main>
+
+          {otherPosts.map((post, index) => (
+            <ScrollReveal key={post.slug} delay={0.2 + index * 0.1} className="col-span-1">
+              <BlogCard post={post} />
+            </ScrollReveal>
+          ))}
+
+          <ScrollReveal delay={0.3} className="col-span-1">
+            <SocialProofCard className="h-full" />
+          </ScrollReveal>
+        </BentoGrid>
+
+        {/* Contact Section */}
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
+      </main>
+
+      <Footer />
+    </>
   );
 }

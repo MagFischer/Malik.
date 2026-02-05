@@ -1,117 +1,181 @@
 {
   "metadata": {
-    "title": "Personal Website",
-    "description": "Portfolio & Blog"
+    "title": "AI-Consulting für Unternehmen | Malik Magnan",
+    "description": "Ich implementiere AI-Lösungen, die Ihr Unternehmen effizienter machen. Chatbots, Automatisierung, Datenanalyse."
   },
   "hero": {
-    "title": "Willkommen",
-    "subtitle": "Portfolio & Blog",
-    "cta": {
-      "portfolio": "Portfolio ansehen",
-      "blog": "Blog lesen"
+    "greeting": "AI-Consultant & Entwickler",
+    "headline": "Ich bringe",
+    "headlineHighlight": "AI in Ihr Unternehmen",
+    "subtitle": "Ich helfe mittelständischen Unternehmen, mit AI-Lösungen Zeit zu sparen, Kosten zu senken und Wettbewerbsvorteile zu gewinnen. Ohne Hype, nur Ergebnisse.",
+    "ctaPrimary": "Kostenlose Erstberatung",
+    "ctaSecondary": "Leistungen ansehen"
+  },
+  "about": {
+    "name": "Malik",
+    "title": "AI-Consultant & Entwickler",
+    "shortBio": "Ich übersetze komplexe AI-Technologie in praktische Geschäftslösungen, die sofort Mehrwert liefern.",
+    "tagline": "AI-Lösungen, die funktionieren. Nicht nur beeindrucken.",
+    "greeting": "Ihr Partner für AI-Implementation",
+    "bio": {
+      "title": "Warum ich?",
+      "paragraph1": "Ich bin Entwickler mit tiefem Verständnis für AI/ML-Technologien UND Geschäftsprozesse. Das bedeutet: Ich baue nicht nur technisch saubere Lösungen, sondern solche, die sich in Ihren Arbeitsalltag integrieren.",
+      "paragraph2": "Mein Ansatz: Erst verstehen, dann implementieren. Jedes Projekt beginnt mit einer gründlichen Analyse Ihrer Prozesse und Ziele."
+    },
+    "skills": {
+      "title": "Technologie-Stack",
+      "subtitle": "Modernste Tools für Ihre AI-Lösung.",
+      "frontend": "Interfaces",
+      "backend": "AI/ML",
+      "design": "Integration"
+    },
+    "values": {
+      "title": "Mein Ansatz",
+      "quality": {
+        "title": "Ergebnisorientiert",
+        "description": "Keine Experimente auf Ihre Kosten. Nur bewährte Lösungen mit messbarem ROI."
+      },
+      "simplicity": {
+        "title": "Pragmatisch",
+        "description": "Die beste AI-Lösung ist die, die Ihre Mitarbeiter tatsächlich nutzen."
+      },
+      "learning": {
+        "title": "Zukunftssicher",
+        "description": "Ich baue Systeme, die mit Ihrem Unternehmen wachsen können."
+      },
+      "collaboration": {
+        "title": "Partnerschaftlich",
+        "description": "Transparente Kommunikation und Wissenstransfer an Ihr Team."
+      }
+    }
+  },
+  "stats": {
+    "title": "Erfahrung",
+    "yearsValue": "5+",
+    "yearsLabel": "Jahre Entwicklung",
+    "projectsValue": "30+",
+    "projectsLabel": "Projekte umgesetzt",
+    "cupsValue": "100%",
+    "cupsLabel": "Kundenzufriedenheit"
+  },
+  "skills": {
+    "title": "Technologien",
+    "frontend": "Interfaces",
+    "backend": "AI & Backend",
+    "tools": "Cloud & DevOps"
+  },
+  "services": {
+    "title": "Leistungen",
+    "subtitle": "Konkrete AI-Lösungen für Ihr Unternehmen",
+    "chatbot": {
+      "title": "AI-Chatbots",
+      "description": "Intelligente Chatbots für Kundenservice, interne FAQ oder Lead-Generierung. Integration in Ihre bestehende Website oder Systeme.",
+      "price": "ab 10.000 €",
+      "features": ["24/7 Kundenservice", "Mehrsprachig", "CRM-Integration", "Analytics-Dashboard"]
+    },
+    "automation": {
+      "title": "Prozess-Automatisierung",
+      "description": "Automatisieren Sie repetitive Aufgaben mit AI: Dokumentenverarbeitung, E-Mail-Klassifizierung, Datenextraktion.",
+      "price": "ab 15.000 €",
+      "features": ["Dokumenten-AI", "Workflow-Automation", "API-Integrationen", "Kostenreduktion bis 70%"]
+    },
+    "strategy": {
+      "title": "AI-Strategie & Beratung",
+      "description": "Wo kann AI in Ihrem Unternehmen den größten Impact haben? Gemeinsam entwickeln wir Ihre AI-Roadmap.",
+      "price": "ab 5.000 €",
+      "features": ["Prozess-Analyse", "Use-Case-Identifikation", "ROI-Berechnung", "Implementierungs-Roadmap"]
+    },
+    "cta": "Projekt besprechen"
+  },
+  "socialProof": {
+    "title": "Das sagen Kunden",
+    "subtitle": "Ergebnisse aus echten Projekten"
+  },
+  "testimonials": {
+    "testimonial1": {
+      "quote": "Die AI-Lösung hat unseren Kundenservice revolutioniert. 60% weniger Anfragen an das Support-Team.",
+      "author": "Geschäftsführer, Mittelständisches Unternehmen"
+    },
+    "testimonial2": {
+      "quote": "Professionelle Umsetzung, klare Kommunikation, messbarer ROI nach 3 Monaten.",
+      "author": "IT-Leiter, E-Commerce"
+    },
+    "testimonial3": {
+      "quote": "Endlich jemand, der AI versteht UND erklären kann. Keine Buzzwords, nur Ergebnisse.",
+      "author": "CEO, Tech-Startup"
     }
   },
   "portfolio": {
-    "title": "Portfolio",
-    "subtitle": "Eine Auswahl meiner Projekte.",
-    "viewProject": "Projekt ansehen",
+    "title": "Projekte",
+    "subtitle": "Ausgewählte AI-Implementierungen.",
+    "viewProject": "Details ansehen",
     "noProjects": "Keine Projekte in dieser Kategorie.",
-    "backToPortfolio": "Zurück zum Portfolio",
+    "backToPortfolio": "Zurück zu Projekten",
     "overview": "Überblick",
-    "techStack": "Tech Stack",
-    "techStackDescription": "Technologien, die in diesem Projekt verwendet wurden.",
+    "techStack": "Technologien",
+    "techStackDescription": "Eingesetzte Technologien in diesem Projekt.",
     "links": {
       "github": "GitHub",
       "demo": "Live Demo"
     },
     "categories": {
       "all": "Alle",
-      "software": "Software",
-      "design": "Design"
+      "software": "AI-Projekte",
+      "design": "Automation"
     },
     "cta": {
-      "title": "Interessiert?",
-      "description": "Schau dir die Live-Demo an oder erkunde den Code auf GitHub."
+      "title": "Ähnliches Projekt?",
+      "description": "Lassen Sie uns besprechen, wie ich Ihnen helfen kann."
     }
   },
   "blog": {
-    "title": "Blog",
-    "subtitle": "Gedanken, Tutorials und Erfahrungen aus der Welt der Softwareentwicklung.",
-    "readMore": "Alle Beiträge",
+    "title": "Insights",
+    "subtitle": "Praktisches Wissen zu AI im Unternehmenseinsatz.",
+    "readMore": "Alle Artikel",
     "minRead": "Min.",
-    "noPosts": "Noch keine Blog-Posts vorhanden.",
-    "backToBlog": "Zurück zum Blog",
+    "noPosts": "Noch keine Artikel vorhanden.",
+    "backToBlog": "Zurück zu Insights",
     "categories": {
       "all": "Alle",
-      "tech": "Tech",
-      "personal": "Persönlich"
-    }
-  },
-  "about": {
-    "title": "Über mich",
-    "greeting": "Hey, ich bin Malik!",
-    "bio": {
-      "title": "Meine Geschichte",
-      "paragraph1": "Ich bin ein leidenschaftlicher Entwickler und Designer, der gerne kreative digitale Erlebnisse erschafft. Mit einem Fokus auf sauberen Code und durchdachtes Design bringe ich Ideen zum Leben.",
-      "paragraph2": "Wenn ich nicht gerade programmiere, experimentiere ich mit neuen Technologien, lese über Softwarearchitektur oder arbeite an persönlichen Projekten."
-    },
-    "skills": {
-      "title": "Skills & Technologien",
-      "subtitle": "Werkzeuge und Technologien, mit denen ich täglich arbeite.",
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "design": "Design"
-    },
-    "values": {
-      "title": "Meine Werte",
-      "quality": {
-        "title": "Qualität",
-        "description": "Ich strebe nach exzellentem Code, der wartbar, testbar und performant ist."
-      },
-      "simplicity": {
-        "title": "Einfachheit",
-        "description": "Die beste Lösung ist oft die einfachste. Weniger Komplexität bedeutet weniger Fehler."
-      },
-      "learning": {
-        "title": "Kontinuierliches Lernen",
-        "description": "Technologie entwickelt sich ständig weiter. Ich bleibe neugierig und lerne jeden Tag dazu."
-      },
-      "collaboration": {
-        "title": "Zusammenarbeit",
-        "description": "Großartige Produkte entstehen durch Teamwork und offene Kommunikation."
-      }
+      "tech": "AI-Technik",
+      "personal": "Business"
     }
   },
   "contact": {
-    "title": "Kontakt",
-    "subtitle": "Hast du eine Frage oder möchtest zusammenarbeiten? Schreib mir!",
-    "name": "Name",
-    "email": "E-Mail",
-    "message": "Nachricht",
-    "send": "Nachricht senden",
+    "badge": "Projekt starten",
+    "title": "Bereit für",
+    "titleHighlight": "AI in Ihrem Unternehmen?",
+    "description": "Kostenloses 30-Minuten-Gespräch: Wir analysieren Ihr Potenzial und ich zeige Ihnen konkrete Möglichkeiten.",
+    "emailLabel": "E-Mail",
+    "locationLabel": "Standort",
+    "location": "Berlin, Deutschland",
+    "socialText": "Vernetzen auf",
+    "name": "Ihr Name",
+    "email": "Geschäftliche E-Mail",
+    "message": "Beschreiben Sie kurz Ihr Anliegen",
+    "send": "Erstberatung anfragen",
     "sending": "Wird gesendet...",
-    "success": "Nachricht gesendet! Ich melde mich bald.",
-    "error": "Fehler beim Senden. Bitte versuche es erneut.",
-    "alternative": "Oder schreib mir direkt eine E-Mail:",
-    "or": "oder"
+    "success": "Anfrage erhalten! Ich melde mich innerhalb von 24 Stunden.",
+    "error": "Etwas ist schiefgegangen. Bitte versuchen Sie es erneut.",
+    "subtitle": "Ich freue mich auf Ihre Anfrage.",
+    "or": "oder",
+    "alternative": "Direkter Kontakt:"
   },
   "navigation": {
-    "home": "Home",
-    "portfolio": "Portfolio",
-    "blog": "Blog",
+    "home": "Start",
+    "portfolio": "Projekte",
+    "blog": "Insights",
     "about": "Über mich",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "services": "Leistungen"
   },
   "footer": {
-    "copyright": "Alle Rechte vorbehalten.",
-    "navigation": "Navigation",
-    "resources": "Ressourcen",
-    "allPosts": "Alle Blog-Beiträge",
-    "social": "Social",
-    "madeWith": "Mit Next.js & Tailwind gebaut"
+    "followMe": "Vernetzen",
+    "copyright": "© {year} Malik Magnan. Alle Rechte vorbehalten.",
+    "madeWith": "AI-Consultant in Berlin"
   },
   "language": {
-    "switch": "Sprache wechseln",
+    "switch": "Language",
     "de": "Deutsch",
     "en": "English"
   }

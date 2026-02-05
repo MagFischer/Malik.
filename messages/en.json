@@ -1,24 +1,118 @@
 {
   "metadata": {
-    "title": "Personal Website",
-    "description": "Portfolio & Blog"
+    "title": "AI Consulting for Businesses | Malik Magnan",
+    "description": "I implement AI solutions that make your business more efficient. Chatbots, automation, data analysis."
   },
   "hero": {
-    "title": "Welcome",
-    "subtitle": "Portfolio & Blog",
-    "cta": {
-      "portfolio": "View Portfolio",
-      "blog": "Read Blog"
+    "greeting": "AI Consultant & Developer",
+    "headline": "I bring",
+    "headlineHighlight": "AI to your business",
+    "subtitle": "I help mid-sized companies save time, reduce costs, and gain competitive advantages with AI solutions. No hype, just results.",
+    "ctaPrimary": "Free Consultation",
+    "ctaSecondary": "View Services"
+  },
+  "about": {
+    "name": "Malik",
+    "title": "AI Consultant & Developer",
+    "shortBio": "I translate complex AI technology into practical business solutions that deliver immediate value.",
+    "tagline": "AI solutions that work. Not just impress.",
+    "greeting": "Your Partner for AI Implementation",
+    "bio": {
+      "title": "Why Me?",
+      "paragraph1": "I'm a developer with deep understanding of AI/ML technologies AND business processes. This means: I don't just build technically sound solutions, but ones that integrate into your daily operations.",
+      "paragraph2": "My approach: Understand first, then implement. Every project starts with a thorough analysis of your processes and goals."
+    },
+    "skills": {
+      "title": "Technology Stack",
+      "subtitle": "Cutting-edge tools for your AI solution.",
+      "frontend": "Interfaces",
+      "backend": "AI/ML",
+      "design": "Integration"
+    },
+    "values": {
+      "title": "My Approach",
+      "quality": {
+        "title": "Results-Oriented",
+        "description": "No experiments at your expense. Only proven solutions with measurable ROI."
+      },
+      "simplicity": {
+        "title": "Pragmatic",
+        "description": "The best AI solution is one your employees actually use."
+      },
+      "learning": {
+        "title": "Future-Proof",
+        "description": "I build systems that can grow with your business."
+      },
+      "collaboration": {
+        "title": "Partnership",
+        "description": "Transparent communication and knowledge transfer to your team."
+      }
+    }
+  },
+  "stats": {
+    "title": "Experience",
+    "yearsValue": "5+",
+    "yearsLabel": "Years Development",
+    "projectsValue": "30+",
+    "projectsLabel": "Projects Delivered",
+    "cupsValue": "100%",
+    "cupsLabel": "Client Satisfaction"
+  },
+  "skills": {
+    "title": "Technologies",
+    "frontend": "Interfaces",
+    "backend": "AI & Backend",
+    "tools": "Cloud & DevOps"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Concrete AI solutions for your business",
+    "chatbot": {
+      "title": "AI Chatbots",
+      "description": "Intelligent chatbots for customer service, internal FAQ, or lead generation. Integration into your existing website or systems.",
+      "price": "from €10,000",
+      "features": ["24/7 Customer Service", "Multilingual", "CRM Integration", "Analytics Dashboard"]
+    },
+    "automation": {
+      "title": "Process Automation",
+      "description": "Automate repetitive tasks with AI: document processing, email classification, data extraction.",
+      "price": "from €15,000",
+      "features": ["Document AI", "Workflow Automation", "API Integrations", "Up to 70% Cost Reduction"]
+    },
+    "strategy": {
+      "title": "AI Strategy & Consulting",
+      "description": "Where can AI have the biggest impact in your company? Together we develop your AI roadmap.",
+      "price": "from €5,000",
+      "features": ["Process Analysis", "Use Case Identification", "ROI Calculation", "Implementation Roadmap"]
+    },
+    "cta": "Discuss Project"
+  },
+  "socialProof": {
+    "title": "What Clients Say",
+    "subtitle": "Results from real projects"
+  },
+  "testimonials": {
+    "testimonial1": {
+      "quote": "The AI solution revolutionized our customer service. 60% fewer inquiries to the support team.",
+      "author": "CEO, Mid-sized Company"
+    },
+    "testimonial2": {
+      "quote": "Professional execution, clear communication, measurable ROI within 3 months.",
+      "author": "IT Director, E-Commerce"
+    },
+    "testimonial3": {
+      "quote": "Finally someone who understands AI AND can explain it. No buzzwords, just results.",
+      "author": "CEO, Tech Startup"
     }
   },
   "portfolio": {
-    "title": "Portfolio",
-    "subtitle": "A selection of projects I've worked on.",
-    "viewProject": "View Project",
+    "title": "Projects",
+    "subtitle": "Selected AI implementations.",
+    "viewProject": "View Details",
     "noProjects": "No projects in this category.",
-    "backToPortfolio": "Back to Portfolio",
+    "backToPortfolio": "Back to Projects",
     "overview": "Overview",
-    "techStack": "Tech Stack",
+    "techStack": "Technologies",
     "techStackDescription": "Technologies used in this project.",
     "links": {
       "github": "GitHub",
@@ -26,92 +120,62 @@
     },
     "categories": {
       "all": "All",
-      "software": "Software",
-      "design": "Design"
+      "software": "AI Projects",
+      "design": "Automation"
     },
     "cta": {
-      "title": "Interested?",
-      "description": "Check out the live demo or explore the code on GitHub."
+      "title": "Similar Project?",
+      "description": "Let's discuss how I can help you."
     }
   },
   "blog": {
-    "title": "Blog",
-    "subtitle": "Thoughts, tutorials, and experiences from the world of software development.",
-    "readMore": "View all posts",
+    "title": "Insights",
+    "subtitle": "Practical knowledge about AI in business.",
+    "readMore": "All Articles",
     "minRead": "min",
-    "noPosts": "No blog posts yet.",
-    "backToBlog": "Back to Blog",
+    "noPosts": "No articles yet.",
+    "backToBlog": "Back to Insights",
     "categories": {
       "all": "All",
-      "tech": "Tech",
-      "personal": "Personal"
-    }
-  },
-  "about": {
-    "title": "About Me",
-    "greeting": "Hey, I'm Malik!",
-    "bio": {
-      "title": "My Story",
-      "paragraph1": "I'm a passionate developer and designer who loves creating creative digital experiences. With a focus on clean code and thoughtful design, I bring ideas to life.",
-      "paragraph2": "When I'm not coding, I experiment with new technologies, read about software architecture, or work on personal projects."
-    },
-    "skills": {
-      "title": "Skills & Technologies",
-      "subtitle": "Tools and technologies I work with daily.",
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "design": "Design"
-    },
-    "values": {
-      "title": "My Values",
-      "quality": {
-        "title": "Quality",
-        "description": "I strive for excellent code that is maintainable, testable, and performant."
-      },
-      "simplicity": {
-        "title": "Simplicity",
-        "description": "The best solution is often the simplest. Less complexity means fewer bugs."
-      },
-      "learning": {
-        "title": "Continuous Learning",
-        "description": "Technology is constantly evolving. I stay curious and learn something new every day."
-      },
-      "collaboration": {
-        "title": "Collaboration",
-        "description": "Great products are built through teamwork and open communication."
-      }
+      "tech": "AI Tech",
+      "personal": "Business"
     }
   },
   "contact": {
-    "title": "Get in Touch",
-    "subtitle": "Have a question or want to work together? Drop me a message!",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send Message",
+    "badge": "Start Project",
+    "title": "Ready for",
+    "titleHighlight": "AI in your business?",
+    "description": "Free 30-minute call: We analyze your potential and I show you concrete possibilities.",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "location": "Berlin, Germany",
+    "socialText": "Connect on",
+    "name": "Your Name",
+    "email": "Business Email",
+    "message": "Briefly describe your needs",
+    "send": "Request Consultation",
     "sending": "Sending...",
-    "success": "Message sent! I'll get back to you soon.",
-    "error": "Failed to send. Please try again.",
-    "alternative": "Or email me directly:",
-    "or": "or"
+    "success": "Request received! I'll get back to you within 24 hours.",
+    "error": "Something went wrong. Please try again.",
+    "subtitle": "I look forward to your inquiry.",
+    "or": "or",
+    "alternative": "Direct contact:"
   },
   "navigation": {
     "home": "Home",
-    "portfolio": "Portfolio",
-    "blog": "Blog",
+    "portfolio": "Projects",
+    "blog": "Insights",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "services": "Services"
   },
   "footer": {
-    "copyright": "All rights reserved.",
-    "navigation": "Navigation",
-    "resources": "Resources",
-    "allPosts": "All Blog Posts",
-    "social": "Social",
-    "madeWith": "Built with Next.js & Tailwind"
+    "followMe": "Connect",
+    "copyright": "© {year} Malik Magnan. All rights reserved.",
+    "madeWith": "AI Consultant in Berlin"
   },
   "language": {
-    "switch": "Switch language",
+    "switch": "Sprache",
     "de": "Deutsch",
     "en": "English"
   }
